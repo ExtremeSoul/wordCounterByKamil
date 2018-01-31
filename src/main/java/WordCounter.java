@@ -11,6 +11,6 @@ public class WordCounter {
     }
 
     public long count(String word) {
-       return stream(sentence.split(REGEX)).filter(word::equals).count();
+       return stream(sentence.split(REGEX)).filter(word::equalsIgnoreCase).count();
     }
 }
