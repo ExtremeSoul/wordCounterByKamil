@@ -1,18 +1,16 @@
+import static java.util.Arrays.stream;
+
 public class WordCounter {
 
 
+    private static final String REGEX = " ";
     private final String sentence;
 
     public WordCounter(String sentence) {
         this.sentence = sentence;
     }
 
-    public int count(String word) {
-        int counter = 0;
-        if (word.equals(sentence)) {
-
-            counter++;
-        }
-        return counter;
+    public long count(String word) {
+       return stream(sentence.split(REGEX)).filter(word::equals).count();
     }
 }
